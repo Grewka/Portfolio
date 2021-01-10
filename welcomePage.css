@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Athiti", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+main {
+  width: 60%;
+  height: 180px;
+  font-size: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+@media only screen and (min-width: 420px) {
+  main {
+    width: 350px;
+    font-size: 36px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  main {
+    width: 400px;
+    font-size: 42px;
+  }
+}
+
+.hideWelcomeButton {
+  visibility: hidden;
+}
+
+.visibleWelcomeButton {
+  visibility: visible;
+  width: 150px;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-transform: uppercase;
+}
