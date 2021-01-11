@@ -1,3 +1,7 @@
+@font-face {
+  font-family: animals;
+  src: url(../fonts/AnimaliaScissored.ttf);
+}
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +12,7 @@
 }
 main {
   width: 60%;
-  height: 180px;
+  height: 280px;
   font-size: 30px;
   position: absolute;
   top: 0;
@@ -16,6 +20,10 @@ main {
   bottom: 0;
   left: 0;
   margin: auto;
+  color: transparent;
+  background-image: url("../img/africa-bckground.jpg");
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
 }
 @media only screen and (min-width: 420px) {
   main {
@@ -36,15 +44,19 @@ main {
 
 .visibleWelcomeButton {
   visibility: visible;
-  width: 150px;
   text-decoration: none;
-  color: black;
   font-size: 20px;
-
-  background-color: transparent;
   border: none;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  text-transform: uppercase;
+  color: transparent;
+  background-image: url("../img/africa-bckground.jpg");
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  text-align: right;
+  display: block;
+  margin-top: 10px;
+}
+
+a > span {
+  font-family: animals;
+  font-size: 80px;
 }
