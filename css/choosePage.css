@@ -34,7 +34,7 @@ body {
   color: transparent;
   background-image: url("../img/africa-bckground.jpg");
   background-size: 100% 100%;
-  -webkit-background-clip: text;
+  background-clip: text;
 }
 .card > span {
   font-family: animals;
@@ -195,6 +195,11 @@ body {
     font-family: animals;
     font-size: 150px;
     text-transform: none;
+  }
+
+  a {
+    text-decoration: none;
+    margin-top: 8%;
   }
   .projectsCard {
     left: 5%;
