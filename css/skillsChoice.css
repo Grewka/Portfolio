@@ -12,7 +12,28 @@
 body {
   display: flex;
   justify-content: center;
-  margin-top: 5%;
+  position: relative;
+  overflow: hidden;
+}
+
+.bodyBackgroundSoft::before,
+.bodyBackgroundHard::before {
+  content: "";
+  background: url(../img/africa-bckground.jpg);
+  background-position: top right;
+  background-size: cover;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: 1;
+  animation: boxesAppear 2s 1s linear forwards;
+}
+
+.bodyBackgroundHard::before {
+  background-position: top left;
 }
 
 .skillsChoiceContainer {
@@ -20,6 +41,7 @@ body {
   width: 100vw;
   overflow: hidden;
   text-align: center;
+  z-index: 2;
 }
 
 .goSoftWrapper,
@@ -29,6 +51,7 @@ body {
   /* text-align: center; */
   margin-left: -1024px;
   animation: swipeInLeft 1s 1s ease-out forwards;
+  cursor: pointer;
 }
 
 .goHardWrapper {
@@ -103,6 +126,7 @@ h3 > span {
     animation: none;
     bottom: 0;
     margin: 0;
+    left: 0;
   }
 
   h3 {
@@ -118,4 +142,128 @@ h3 > span {
   .goBackWrapper > h3 > span {
     font-size: 100px;
   }
+}
+
+/* skills boxes */
+
+.container {
+  width: 320px;
+  position: relative;
+  height: 100vh;
+  z-index: 2;
+  margin-left: 6%;
+}
+.hiddenBox {
+  opacity: 0;
+}
+.box {
+  z-index: 2;
+  position: relative;
+  opacity: 0;
+  height: 100px;
+  width: 100px;
+  float: left;
+  display: inline-block;
+  overflow: hidden;
+  margin-left: 21px;
+  margin-right: 18px;
+  margin-top: 23px;
+  background: white;
+  text-decoration: none;
+  color: #fff;
+  transform: rotate(45deg);
+  border: 4px solid transparent;
+  background-clip: padding-box;
+  animation: boxesAppear 2s 1s linear forwards;
+}
+.textHidden {
+  opacity: 0;
+  display: none;
+}
+.textHiddenSoft {
+  opacity: 0;
+}
+.text {
+  z-index: 2;
+  opacity: 1;
+  width: 100px;
+  height: 100px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-family: "Athiti", sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  transform: rotate(-45deg);
+  color: rgb(77, 38, 69);
+  font-weight: bold;
+  position: relative;
+}
+
+.container > div:nth-child(3n + 3) {
+  margin-left: 90px;
+  position: relative;
+}
+.container > div:nth-child(n + 3) {
+  margin-top: -32px;
+}
+.clear::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.hidden {
+  display: none;
+}
+.boxContainer {
+  display: none;
+}
+
+@keyframes boxesAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* corners */
+
+.corners {
+  width: 100px;
+  height: 100px;
+  transform: rotate(45deg);
+  position: absolute;
+  z-index: 3;
+  background-color: #fff;
+  opacity: 0.6;
+  font-family: animals;
+  font-size: 40px;
+  color: #000;
+  top: -50px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+.leftCorner {
+  left: -50px;
+  display: none;
+}
+.rightCorner {
+  right: -50px;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+a:link,
+a:visited {
+  color: #000;
+}
+.rightCornerHard > span,
+.rightCornerSoft > span {
+  display: none;
 }
