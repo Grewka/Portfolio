@@ -22,6 +22,8 @@ let textsSoft = document.querySelectorAll(".textHiddenSoft");
 let leftCorner = document.querySelector(".leftCorner");
 let rightCornerHard = document.querySelector(".rightCornerHard");
 let rightCornerSoft = document.querySelector(".rightCornerSoft");
+let middleSoft = document.querySelector(".middleSoft");
+let middleHard = document.querySelector(".middleHard");
 
 // onClick
 
@@ -39,6 +41,7 @@ function showSoft() {
   leftCorner.className = "corners leftCorner";
   rightCornerHard.className = "corners rightCorner";
   leftCorner.style.display = "flex";
+  middleSoft.style.display = "flex";
 }
 
 function showHard() {
@@ -54,6 +57,7 @@ function showHard() {
   leftCorner.className = "corners leftCorner";
   rightCornerSoft.className = "corners rightCorner";
   leftCorner.style.display = "flex";
+  middleHard.style.display = "flex";
 }
 
 goSoft.addEventListener("click", showSoft);
@@ -65,6 +69,9 @@ rightCornerHard.addEventListener("click", function () {
   textsSoft.forEach((text) => {
     text.className = "hidden";
   });
+  middleSoft.style.display = "none";
+  middleHard.style.display = "flex";
+
   showHard();
 });
 
@@ -74,5 +81,8 @@ rightCornerSoft.addEventListener("click", function () {
   texts.forEach((text) => {
     text.className = "hidden";
   });
+  middleSoft.style.display = "flex";
+  middleHard.style.display = "none";
+
   showSoft();
 });

@@ -147,11 +147,12 @@ h3 > span {
 /* skills boxes */
 
 .container {
-  width: 320px;
+  width: 280px;
   position: relative;
   height: 100vh;
   z-index: 2;
-  margin-left: 6%;
+
+  overflow: hidden;
 }
 .hiddenBox {
   opacity: 0;
@@ -231,7 +232,8 @@ h3 > span {
 
 /* corners */
 
-.corners {
+.corners,
+.middle {
   width: 100px;
   height: 100px;
   transform: rotate(45deg);
@@ -266,4 +268,27 @@ a:visited {
 .rightCornerHard > span,
 .rightCornerSoft > span {
   display: none;
+}
+
+.middle {
+  font-family: "Athiti", sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 20px;
+  cursor: initial;
+  color: #000;
+}
+
+.middleSoft {
+  display: none;
+}
+
+.middleHard {
+  display: none;
+}
+
+.middle > span {
+  transform: rotate(-45deg);
 }
