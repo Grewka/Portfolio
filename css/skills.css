@@ -1,0 +1,294 @@
+@font-face {
+  font-family: animals;
+  src: url(../fonts/AnimaliaScissored.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+body {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.bodyBackgroundSoft::before,
+.bodyBackgroundHard::before {
+  content: "";
+  background: url(../img/africa-bckground.jpg);
+  background-position: top right;
+  background-size: cover;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: 1;
+  animation: boxesAppear 2s 1s linear forwards;
+}
+
+.bodyBackgroundHard::before {
+  background-position: top left;
+}
+
+.skillsChoiceContainer {
+  height: 90vh;
+  width: 100vw;
+  overflow: hidden;
+  text-align: center;
+  z-index: 2;
+}
+
+.goSoftWrapper,
+.goBackWrapper {
+  height: 33%;
+  width: 100%;
+  /* text-align: center; */
+  margin-left: -1024px;
+  animation: swipeInLeft 1s 1s ease-out forwards;
+  cursor: pointer;
+}
+
+.goHardWrapper {
+  width: 100%;
+  height: 33%;
+  opacity: 0;
+  animation: appear 0.8s 1.5s ease-out forwards;
+}
+
+h3 {
+  font-family: "Athiti", sans-serif;
+  font-size: 25px;
+  text-transform: uppercase;
+  line-height: 1;
+  background-image: url("../img/africa-bckground.jpg");
+  background-size: 100% 100%;
+  background-clip: text;
+  color: transparent;
+  cursor: pointer;
+}
+h3 > span {
+  font-family: animals;
+  font-size: 140px;
+  line-height: 1.1;
+  text-transform: none;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+@keyframes swipeInLeft {
+  0% {
+    margin-left: -1024px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* width > 1024 */
+@media only screen and (min-width: 1024px) {
+  .skillsChoiceContainer {
+    height: 90vh;
+    width: 1000px;
+    overflow: hidden;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    animation: appear 0.5s 1s ease-out forwards;
+  }
+  .goSoftWrapper,
+  .goHardWrapper {
+    animation: none;
+    margin: 0;
+  }
+  .goHardWrapper {
+    opacity: 1;
+  }
+
+  .goBackWrapper {
+    position: absolute;
+    animation: none;
+    bottom: 0;
+    margin: 0;
+    left: 0;
+  }
+
+  h3 {
+    font-size: 40px;
+  }
+  h3 > span {
+    font-size: 250px;
+  }
+  .goBackWrapper > h3 {
+    font-size: 20px;
+    margin-top: 60px;
+  }
+  .goBackWrapper > h3 > span {
+    font-size: 100px;
+  }
+}
+
+/* skills boxes */
+
+.container {
+  width: 280px;
+  position: relative;
+  height: 100vh;
+  z-index: 2;
+
+  overflow: hidden;
+}
+.hiddenBox {
+  opacity: 0;
+}
+.box {
+  z-index: 2;
+  position: relative;
+  opacity: 0;
+  height: 100px;
+  width: 100px;
+  float: left;
+  display: inline-block;
+  overflow: hidden;
+  margin-left: 21px;
+  margin-right: 18px;
+  margin-top: 23px;
+  background: white;
+  text-decoration: none;
+  color: #fff;
+  transform: rotate(45deg);
+  border: 4px solid transparent;
+  background-clip: padding-box;
+  animation: boxesAppear 2s 1s linear forwards;
+}
+.textHidden {
+  opacity: 0;
+  display: none;
+}
+.textHiddenSoft {
+  opacity: 0;
+}
+.text {
+  z-index: 2;
+  opacity: 1;
+  width: 100px;
+  height: 100px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-family: "Athiti", sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  transform: rotate(-45deg);
+  color: rgb(77, 38, 69);
+  font-weight: bold;
+  position: relative;
+}
+
+.container > div:nth-child(3n + 3) {
+  margin-left: 90px;
+  position: relative;
+}
+.container > div:nth-child(n + 3) {
+  margin-top: -32px;
+}
+.clear::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.hidden {
+  display: none;
+}
+.boxContainer {
+  display: none;
+}
+
+@keyframes boxesAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* corners */
+
+.corners,
+.middle {
+  width: 100px;
+  height: 100px;
+  transform: rotate(45deg);
+  position: absolute;
+  z-index: 3;
+  background-color: #fff;
+  opacity: 0.6;
+  font-family: animals;
+  font-size: 40px;
+  color: #000;
+  top: -50px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+.leftCorner {
+  left: -50px;
+  display: none;
+}
+.rightCorner {
+  right: -50px;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+a:link,
+a:visited {
+  color: #000;
+}
+.rightCornerHard > span,
+.rightCornerSoft > span {
+  display: none;
+}
+
+.middle {
+  font-family: "Athiti", sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 20px;
+  cursor: initial;
+  color: #000;
+}
+
+.middleSoft {
+  display: none;
+}
+
+.middleHard {
+  display: none;
+}
+
+.middle > span {
+  transform: rotate(-45deg);
+}
