@@ -1,13 +1,52 @@
+@font-face {
+  font-family: animals;
+  src: url(../fonts/AnimaliaScissored.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
 }
-
 body {
+  display: flex;
+  justify-content: center;
+}
+p {
   color: transparent;
   background-image: url("../img/africa-bckground.jpg");
   background-size: 100% 100%;
   -webkit-background-clip: text;
+  font-size: 40px;
+  width: 300px;
+  height: 100px;
+  margin-top: 200px;
+  text-transform: uppercase;
+}
+
+.goBack {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  color: transparent;
+  background-image: url("../img/africa-bckground.jpg");
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.goBack > a > span {
+  font-family: animals;
+  font-size: 52px;
+  color: transparent;
+  background-image: url("../img/africa-bckground.jpg");
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  text-decoration: none;
+}
+a:link {
+  color: transparent;
+  text-decoration: none;
 }

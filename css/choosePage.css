@@ -34,7 +34,7 @@ body {
   color: transparent;
   background-image: url("../img/africa-bckground.jpg");
   background-size: 100% 100%;
-  background-clip: text;
+  -webkit-background-clip: text;
 }
 .card > span {
   font-family: animals;

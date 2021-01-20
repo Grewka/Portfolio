@@ -23,7 +23,7 @@ form > h3 {
   color: transparent;
   background-image: url("../img/africa-bckground.jpg");
   background-size: 100% 100%;
-  background-clip: text;
+  -webkit-background-clip: text;
   font-size: 23px;
   padding: 20px 0;
 }
@@ -166,7 +166,7 @@ button:hover i {
   color: transparent;
   background-image: url("../img/africa-bckground.jpg");
   background-size: 100% 100%;
-  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .goBack > a > span {
@@ -175,7 +175,7 @@ button:hover i {
   color: transparent;
   background-image: url("../img/africa-bckground.jpg");
   background-size: 100% 100%;
-  background-clip: text;
+  -webkit-background-clip: text;
   text-decoration: none;
 }
 a:link {
